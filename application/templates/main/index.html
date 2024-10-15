@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container bg-warning p-3 rounded">
+        <div class="bg-warning">
+            {% if linkid %}
+                <p class="lead">{{linkid}}</p>
+            {% endif %}
+            <form method="post">
+                {{form.hidden_tag()}}
+                <div class="input-group input-group-lg">
+                    {{form.url(class="form-control", placeholder="Enter URL")}}
+                    <button type="submit" class="btn btn-dark">Shorten</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if linkid %}
+        <div class="container bg-light p-3 rounded">
+            <p class="lead">Shortened URL: <a href="{{config.SITE_URL}}/{{linkid}}">{{config.SITE_URL}}/{{linkid}}</a></p>
+            <input type="text" class="form-control" value="{{config.SITE_URL}}/{{linkid}}" readonly>
+        </div>
+    {% endif %}
+{% endblock %}

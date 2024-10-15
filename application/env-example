@@ -1,0 +1,6 @@
+SECRET_KEY = 'This should be some randomish string of characters and stuff to protect user sessions.'
+SITE_URL = 'https://site-url.tld'
+MYSQL_HOST = 'localhost'
+MYSQL_USER = 'username'
+MYSQL_PASS = 'password'
+MYSQL_DB = 'database'
