@@ -29,7 +29,7 @@ def index():
 
 @main.route('/<linkid>/')
 def forward(linkid):
-    url = Urls.query.get(linkid)
+    url = Urls.query.filter(Urls.linkid == linkid).first()
     if url:
         u = url.get_url(linkid)
         return redirect(u, code=301)
